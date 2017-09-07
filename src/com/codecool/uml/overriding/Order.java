@@ -1,7 +1,10 @@
 package com.codecool.uml.overriding;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Order implements IOrderable {
-    private int id;
+    private static final AtomicInteger count = new AtomicInteger(0);
+    private int id = count.incrementAndGet();
     private String status;
 
     public Order(int id, String status) {
